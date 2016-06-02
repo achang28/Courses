@@ -1,0 +1,69 @@
+{
+  "name": "towmo-web",
+  "version": "0.1.0",
+  "description": "Web version of TowMo service",
+  "main": "webpack.config.js",
+  "scripts": {
+    "prestart": "babel-node tools/startMsg.js",
+    "start": "npm-run-all --parallel open:src test:watch",
+    "open:src": "webpack-dev-server",
+    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/achang28/TowMo-Web"
+  },
+  "author": "Albert W. Chang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/achang28/TowMo-Web/issues"
+  },
+  "homepage": "http://www.towmo.com",
+  "dependencies": {
+    "babel-polyfill": "6.8.0",
+    "bootstrap": "3.3.6",
+    "jquery": "2.2.3",
+    "react": "15.0.2",
+    "react-dom": "15.0.2",
+    "react-redux": "4.4.5",
+    "react-router": "2.4.0",
+    "react-router-redux": "4.0.4",
+    "redux": "3.5.2",
+    "redux-thunk": "2.0.1",
+    "toastr": "2.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-react-display-name": "^2.0.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-register": "^6.9.0",
+    "colors": "^1.1.2",
+    "cross-env": "^1.0.8",
+    "css-loader": "^0.23.1",
+    "enzyme": "^2.3.0",
+    "eventsource-polyfill": "^0.9.6",
+    "expect": "^1.20.1",
+    "express": "^4.13.4",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "jsdom": "^9.2.0",
+    "mocha": "^2.5.3",
+    "nock": "^8.0.0",
+    "npm-run-all": "^2.1.1",
+    "open": "0.0.5",
+    "react-addons-test-utils": "15.0.2",
+    "redux-immutable-state-invariant": "1.2.3",
+    "redux-mock-store": "1.0.2",
+    "rimraf": "2.5.2",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
+    "webpack": "1.13.0",
+    "webpack-dev-middleware": "1.6.1",
+    "webpack-hot-middleware": "2.10.0"
+  }
+}
