@@ -3,9 +3,8 @@
  */
 "use strict";
 
-var React = require('react');
-var { PropTypes } = React;
-var Header = require('./shared/Header');
+import React, { PropTypes } from 'react';
+import Header from './shared/Header';
 //var {connect} = require('react-redux');
 
 var App = React.createClass({
@@ -23,4 +22,4 @@ App.propTypes = {
   children: PropTypes.object.isRequired
 };
 
-module.exports = App;
+export default App;

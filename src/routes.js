@@ -1,14 +1,14 @@
 /**
  * Created by albertwchang on 5/28/16.
  */
-var React = require('react');
-var { Route, IndexRoute } = require('react-router');
-var App = require('./comps/App');
-var Home = require('./comps/home/base');
-var Profile = require('./comps/profile/base');
-var Courses = require('./comps/courses/base');
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
+import App from './comps/App';
+import Home from './comps/home/base';
+import Profile from './comps/profile/base';
+import Courses from './comps/courses/base';
 
-module.exports = (
+export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="courses" component={Courses} />

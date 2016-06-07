@@ -1,18 +1,23 @@
 /**
  * Created by albertwchang on 5/26/16.
  */
-//console.log("Testing...");
 'use strict';
 
 require('babel-polyfill');
-var React = require('react');
-var { render } = require('react-dom');
-var { Router, browserHistory } = require('react-router');
-var routes = require('./routes');
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
+import configStore from './store/configStore';
 require('./styles/styles.css');
 require('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
+const store = configStore();
+
 render(
-  <Router history={browserHistory} routes={routes} />,
-  document.getElementById('App')
+	<Provider store={store}>
+		<Router history={browserHistory} routes={routes} />
+	</Provider>,
+	document.getElementById('App')
 );

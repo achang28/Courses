@@ -1,18 +1,20 @@
 {
-  "name": "towmo-web",
+  "name": "courses",
   "version": "0.1.0",
-  "description": "Web version of TowMo service",
+  "description": "Courses example web application",
   "main": "webpack.config.js",
   "scripts": {
     "prestart": "babel-node tools/startMsg.js",
     "start": "npm-run-all --parallel open:src test:watch",
-    "open:src": "webpack-dev-server",
+    "open:src": "webpack-dev-server -d",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/achang28/TowMo-Web"
+    "url": "https://github.com/achang28/Courses"
   },
   "author": "Albert W. Chang",
   "license": "ISC",
@@ -30,6 +32,7 @@
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
+    "redux-immutable-state-invariant": "^1.2.3",
     "redux-thunk": "2.0.1",
     "toastr": "2.1.2"
   },
@@ -46,6 +49,10 @@
     "cross-env": "^1.0.8",
     "css-loader": "^0.23.1",
     "enzyme": "^2.3.0",
+    "eslint": "2.11.0",
+    "eslint-plugin-import": "1.6.1",
+    "eslint-plugin-react": "5.0.1",
+    "eslint-watch": "2.1.11",
     "eventsource-polyfill": "^0.9.6",
     "expect": "^1.20.1",
     "express": "^4.13.4",
@@ -64,6 +71,7 @@
     "url-loader": "0.5.7",
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
+    "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "2.10.0"
   }
 }
