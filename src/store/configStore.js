@@ -3,10 +3,12 @@
  */
 'use strict';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from '../reducers/base';
-//var reduxImmutableStateInvariant = require('redux-immutable-state-invariant');
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
+import thunk from 'redux-thunk';
 
 export default function configStore(initialState) {
-	return createStore(rootReducer, initialState);
+	let readyMiddleware = applyMiddleware(thunk, reduxImmutableStateInvariant());
+	return createStore(rootReducer, initialState, readyMiddleware);
 };
